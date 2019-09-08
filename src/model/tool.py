@@ -6,10 +6,10 @@ faker = Faker()
 
 
 class Tool(object):
-    def __init__(self, tool_id, generation, selection_coeffient):
+    def __init__(self, tool_id, generation, sc):
         self.id = tool_id
         self.generation = generation
-        self.selection_coeffient = selection_coeffient
+        self.sc = sc  # selection_coefficient
 
     @staticmethod
     def from_config(tool_config):

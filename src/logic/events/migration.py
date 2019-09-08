@@ -10,7 +10,6 @@ def run(world, generation):
             continue
         destination = randomize_destination(pop, world)
         migrate_tools(pop, destination)
-        pass
 
 
 def migrate_tools(origin, destination):

@@ -2,6 +2,10 @@
 # Populate this with default values, and override them in your config json file
 
 config = {
+    "generational_events": [
+        "migration",
+        "tool_development"
+    ],
     "variables": {
         "simulation_length": 3,
         "migration": {
@@ -10,8 +14,8 @@ config = {
           "tool_adoption_probability": 0.2
         },
         "tool_development": {
-            "probability": 0.05,
-            "coefficient_func": "???",
+            "probability": 0.1,
+            "sc_func": "math.exp(-10 * x)",
             "max_tools": 1,
         }
     }

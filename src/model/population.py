@@ -11,6 +11,9 @@ class Population(object):
         self.tools = set()
 
     def add_tool(self, tool_id):
+        if not isinstance(tool_id, str):
+            raise Exception("add_tool accepts tool id, not an actual tool")
+
         self.tools.add(tool_id)
 
     def adopt_tools(self, tool_ids):

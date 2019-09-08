@@ -1,3 +1,6 @@
+import math
+import random
+
 import numpy as np
 
 from model.tool import Tool
@@ -10,9 +13,14 @@ def run(world, generation):
         if np.random.binomial(pop.size, prob) <= 0:
             continue
         new_tool = generate_tool(generation)
-        pop.add_tool(new_tool)
+        print("Population %s developed a great new tool: %s! sc=%.3f" % (pop.id, new_tool.id, new_tool.sc))
+        world.tools_repo.register_tool(new_tool)
+        pop.add_tool(new_tool.id)
+
 
 def generate_tool(generation):
     id = Tool.generate_id()
-    selection_coefficient
-    return Tool(id, generation, selection_coeffient)
+    sc_distribution_func = global_config.get_var('tool_development.sc_func')
+    x = random.random()
+    sc = eval(sc_distribution_func)
+    return Tool(id, generation, sc)

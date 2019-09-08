@@ -10,7 +10,10 @@ class Simulator(object):
     def run(self):
         simulation_length = global_config.get_var('simulation_length') + 1
         for gen in range(1, simulation_length):
-            print("Generation %d" % gen)
+            print("Generation {}".format(gen))
+            print("======================")
             for event in self.generational_events:
                 event_module = importlib.import_module("logic.events." + event)
                 event_module.run(self.world, gen)
+            print()
+            print()
