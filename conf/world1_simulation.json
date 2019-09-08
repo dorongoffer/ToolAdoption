@@ -39,7 +39,7 @@
     ]
   },
   "variables": {
-    "simulation_length": 3,
+    "simulation_length": 10,
     "migration": {
       "probability": 0.2,
       "max_tools": 3

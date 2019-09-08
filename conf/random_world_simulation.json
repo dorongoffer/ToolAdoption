@@ -1,0 +1,15 @@
+{
+  "world": {
+    "tools_count": 20,
+    "populations_count": 300,
+    "min_pop_size": 100,
+    "max_pop_size": 1000
+  },
+  "variables": {
+    "simulation_length": 2,
+    "migration": {
+      "probability": 0.2,
+      "max_tools": 3
+    }
+  }
+}

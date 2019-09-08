@@ -11,6 +11,6 @@ def run(world, generation):
         adopters = reduce((lambda x, y: x + y), sizes)
         prob = base_prob / adopters
         if random.random() < prob:
-            print("Tool {} abandoned by {} adopters across {} populations :(".format(tool.id, adopters, len(populations)))
+            print("Tool Abandonment: {} abandoned by {} adopters across {} populations :(".format(tool.id, adopters, len(populations)))
             [pop.abandon_tool(tool.id) for pop in populations]
             world.tools_repo.mark_abandoned(tool.id, generation)

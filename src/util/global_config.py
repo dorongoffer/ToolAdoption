@@ -2,12 +2,19 @@
 # Populate this with default values, and override them in your config json file
 
 config = {
+    "world": {
+        "tools_count": 5,
+        "populations_count": 7,
+        "min_pop_size": 20,
+        "max_pop_size": 100,
+    },
     "generational_events": [
         "migration",
         "tool_development",
         "tool_abandonment"
     ],
     "variables": {
+        "sc_func": "math.exp(-10 * x)",
         "simulation_length": 3,
         "migration": {
           "probability": 0.1,
@@ -16,7 +23,6 @@ config = {
         },
         "tool_development": {
             "probability": 0.1,
-            "sc_func": "math.exp(-10 * x)",
             "max_tools": 1,
         },
         "tool_abandonment": {

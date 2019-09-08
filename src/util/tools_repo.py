@@ -17,5 +17,8 @@ class ToolsRepo(object):
                 tool_id, tool.abandoned_at))
         tool.abandoned_at = generation
 
+    def __len__(self):
+        return len(self.tools)
+
     def __iter__(self):
         return iter(self.tools.values())

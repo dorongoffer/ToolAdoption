@@ -1,6 +1,10 @@
 import json
+import random
 
 from faker import Faker
+
+from util import global_config
+
 faker = Faker()
 
 
@@ -10,14 +14,14 @@ class Population(object):
         self.size = size
         self.tools = set()
 
-    def add_tool(self, tool_id):
+    def adopt_tool(self, tool_id):
         if not isinstance(tool_id, str):
-            raise Exception("add_tool accepts tool id, not an actual tool")
+            raise Exception("adopt_tool accepts tool id, not an actual tool")
 
         self.tools.add(tool_id)
 
     def adopt_tools(self, tool_ids):
-        [self.add_tool(tool_id) for tool_id in tool_ids]
+        [self.adopt_tool(tool_id) for tool_id in tool_ids]
 
     def is_adopted(self, tool_id):
         return tool_id in self.tools
@@ -27,12 +31,12 @@ class Population(object):
 
     @staticmethod
     def from_config(pop_config):
-        pop_id = pop_config['id'] if 'id' in pop_config else Population.next_id()
+        pop_id = pop_config['id'] if 'id' in pop_config else Population.generate_id()
         size = pop_config['size']
         pop = Population(pop_id, size)
-        [pop.add_tool(tool_id) for tool_id in pop_config['tools']]
+        [pop.adopt_tool(tool_id) for tool_id in pop_config['tools']]
         return pop
 
     @staticmethod
-    def next_id():
-        return faker.last_name()
+    def generate_id():
+        return "{}{}".format(faker.last_name(), random.randint(1, 1000))

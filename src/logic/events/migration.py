@@ -17,7 +17,7 @@ def migrate_tools(origin, destination):
     max_adopted_tools = global_config.get_var('migration.max_tools')
     adopted_tools_count = min(max_adopted_tools, np.random.binomial(len(origin.tools), tool_adoption_prob))
     adopted_tools = random.sample(list(origin.tools), adopted_tools_count)
-    print("Migration occurred from %s to %s, who adopted tools: [%s]" % (origin.id, destination.id, ','.join(adopted_tools)))
+    print("Migration occurred: from %s to %s. Tools adopted: %s." % (origin.id, destination.id, ', '.join(adopted_tools)))
     destination.adopt_tools(adopted_tools)
 
 

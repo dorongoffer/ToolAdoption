@@ -6,7 +6,7 @@ from util import global_config
 from deepmerge import always_merger
 
 if __name__ == '__main__':
-    config_file_path = 'conf/my_first_simulation.json'
+    config_file_path = 'conf/random_world_simulation.json'
     with open(config_file_path, 'r') as f:
         config = json.load(f)
         always_merger.merge(global_config.config, config)
@@ -17,6 +17,6 @@ if __name__ == '__main__':
         simulator = Simulator(world, generational_events=events)
         print("Running simulation with config {}: {}"
               .format(config_file_path, json.dumps(global_config.get_vars(), indent=2)))
-        # print("Initial state of world: %s" % world)
+        print("Initial world: %s" % world)
         simulator.run()
-        # print("Final state of world: %s" % world)
+        print("Final world: %s" % world)
