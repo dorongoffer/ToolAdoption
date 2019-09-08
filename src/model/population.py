@@ -19,6 +19,12 @@ class Population(object):
     def adopt_tools(self, tool_ids):
         [self.add_tool(tool_id) for tool_id in tool_ids]
 
+    def is_adopted(self, tool_id):
+        return tool_id in self.tools
+
+    def abandon_tool(self, tool_id):
+        self.tools.remove(tool_id)
+
     @staticmethod
     def from_config(pop_config):
         pop_id = pop_config['id'] if 'id' in pop_config else Population.next_id()

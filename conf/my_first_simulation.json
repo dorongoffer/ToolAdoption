@@ -26,15 +26,15 @@
     "tools": [
       {
         "id": "tool1",
-        "selection_coeffient": 0.5
+        "sc": 0.5
       },
       {
         "id": "tool2",
-        "selection_coeffient": 0.3
+        "sc": 0.3
       },
       {
         "id": "tool3",
-        "selection_coeffient": 0.8
+        "sc": 0.8
       }
     ]
   },

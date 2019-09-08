@@ -4,7 +4,8 @@
 config = {
     "generational_events": [
         "migration",
-        "tool_development"
+        "tool_development",
+        "tool_abandonment"
     ],
     "variables": {
         "simulation_length": 3,
@@ -17,6 +18,9 @@ config = {
             "probability": 0.1,
             "sc_func": "math.exp(-10 * x)",
             "max_tools": 1,
+        },
+        "tool_abandonment": {
+            "probability": 0.005
         }
     }
 }
