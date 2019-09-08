@@ -1,0 +1,48 @@
+{
+  "world": {
+    "populations": [
+      {
+        "id": "kaki",
+        "size": 10,
+        "tools": [
+          "tool1", "tool3"
+        ]
+      },
+      {
+        "id": "pipi",
+        "size": 7,
+        "tools": [
+          "tool2"
+        ]
+      },
+      {
+        "id": "shilshul",
+        "size": 105,
+        "tools": [
+          "tool2", "tool3"
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "id": "tool1",
+        "selection_coeffient": 0.5
+      },
+      {
+        "id": "tool2",
+        "selection_coeffient": 0.3
+      },
+      {
+        "id": "tool3",
+        "selection_coeffient": 0.8
+      }
+    ]
+  },
+  "variables": {
+    "simulation_length": 3,
+    "migration": {
+      "probability": 0.2,
+      "max_tools": 3
+    }
+  }
+}
